@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Violeta Serrano Gimeno</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Violeta Serrano Gimeno: Mathematics with Management and Finance student at King's College London. Projects, experience and leadership.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one quiet left-aligned column. Big name, then rows instead of cards; violet is the only colour, used sparingly. */
+:root{
+  --bg:#FBFAFC;
+  --surface:#F3F0F6;
+  --ink:#1B1722;
+  --muted:#6E6879;
+  --line:#E6E1EC;
+  --accent:#5E2D8C;
+  --accent-soft:#EFE7F7;
+  --petal2:#B894E0;
+  --sun:#F0B43C;
+  --f-sans:"Geist","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121016; --surface:#1B1821; --ink:#EDE9F2; --muted:#9A93A6; --line:#2A2631;
+  --accent:#C7A6EC; --accent-soft:#2A2136; --petal2:#7A55A8; --sun:#F5C76A; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#121016; --surface:#1B1821; --ink:#EDE9F2; --muted:#9A93A6; --line:#2A2631;
+  --accent:#C7A6EC; --accent-soft:#2A2136; --petal2:#7A55A8; --sun:#F5C76A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono)}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{font-weight:600;text-decoration:none;font-size:15px;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:600px){nav ul{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(56px,11vw,120px) clamp(48px,8vw,88px)}
+.hero h1{font-size:clamp(44px,9vw,84px);font-weight:600;letter-spacing:-.045em;line-height:.98;margin:0 0 28px;text-wrap:balance}
+.hero h1 span{color:var(--muted)}
+.hero p{font-size:clamp(18px,2.4vw,21px);line-height:1.5;margin:0 0 32px;max-width:36em;color:var(--ink)}
+.hero p .hl{color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:border-color .15s,background .15s}
+.pill:hover{border-color:var(--accent)}
+.pill.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pill.solid:hover{background:var(--accent);border-color:var(--accent)}
+.status-line{margin-top:40px;display:flex;align-items:baseline;gap:10px;line-height:1.5;font-size:14px;color:var(--muted)}
+.pulse{width:7px;height:7px;border-radius:50%;background:#2E9E6B;box-shadow:0 0 0 4px rgba(46,158,107,.15);flex:none}
+
+/* sections */
+section{padding-block:48px;border-top:1px solid var(--line)}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+h2{font-size:14px;font-weight:500;margin:0;color:var(--muted);letter-spacing:0}
+.about p{font-size:18px;line-height:1.65;margin:0 0 1em;max-width:36em}
+
+/* featured */
+.featured{background:var(--surface);border-radius:16px;padding:clamp(20px,4vw,32px);margin-bottom:32px}
+.featured .tag{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:999px;margin-bottom:14px}
+.featured h3{font-size:clamp(22px,3.4vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:0 0 6px;text-wrap:balance}
+.featured .sub{color:var(--muted);font-size:15px;margin:0 0 22px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:22px}
+@media (max-width:520px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--bg);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+.featured ul{margin:0;padding-left:1.1em;display:grid;gap:8px}
+.featured li::marker{color:var(--accent)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.chip{font-family:var(--f-mono);font-size:12px;padding:4px 9px;border-radius:6px;background:var(--bg);color:var(--muted)}
+
+/* filters */
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+
+/* project rows */
+.rows{list-style:none;margin:0;padding:0}
+.row{border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row button.head{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:18px 0;align-items:baseline}
+.row .title{font-size:17px;font-weight:500;letter-spacing:-.01em}
+.row .one{grid-column:1;color:var(--muted);font-size:15px}
+.row .title{grid-column:1;grid-row:1}
+.row .right{display:flex;align-items:center;gap:12px;grid-row:1;grid-column:2}
+.badge{font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+.badge.live{color:var(--accent)}
+.plus{width:18px;height:18px;position:relative;flex:none;color:var(--muted)}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .2s}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.row.open .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.row:hover .title{color:var(--accent)}
+.detail{padding:0 0 22px;max-width:36em}
+.detail p{margin:0 0 12px}
+.detail .stack .chip{background:var(--surface)}
+.row.planned .title{color:var(--muted)}
+.empty{color:var(--muted);padding:18px 0}
+
+/* experience */
+.xp{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.xp li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:4px 24px}
+@media (max-width:560px){.xp li{grid-template-columns:minmax(0,1fr)}}
+.xp .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.xp h3{font-size:17px;font-weight:500;margin:0}
+.xp .org{color:var(--muted);margin:0 0 6px;font-size:15px}
+.xp p.d{margin:0;font-size:15px;max-width:34em}
+
+/* learning */
+.learn{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.learn li{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:4px 20px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.learn .t{font-weight:500}
+.learn .s{color:var(--muted);font-size:14px}
+.prog{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;justify-content:flex-end}
+.prog .bar{width:56px;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--accent)}
+
+/* misc lists */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px}
+.simple{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.simple span{color:var(--muted)}
+.subh{font-size:13px;color:var(--muted);margin:0 0 12px;font-weight:500}
+
+/* contact */
+.contact h3{font-size:clamp(28px,5vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px;text-wrap:balance}
+.contact p{color:var(--muted);margin:0 0 24px;max-width:34em}
+.email{font-family:var(--f-mono);font-size:15px;user-select:all;overflow-wrap:anywhere}
+.crow{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:12px}
+.toast{font-size:13px;color:var(--accent)}
+footer{padding-block:40px;color:var(--muted);font-size:13px}
+
+/* ===== motion ===== */
+.hero{position:relative;overflow:hidden;padding-inline:0}
+.hero .wrap{position:relative;z-index:1}
+#petals{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.ch{display:inline-block;transform-origin:50% 80%;animation:rise .7s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--i) * 35ms)}
+.word{white-space:nowrap;display:inline-block}
+.ch:hover{animation:boing .5s cubic-bezier(.3,1.8,.5,1)}
+@keyframes rise{from{transform:translateY(.45em) rotate(8deg) scale(.9)}to{transform:none}}
+@keyframes boing{0%{transform:none}30%{transform:translateY(-.18em) rotate(-6deg) scale(1.08)}60%{transform:translateY(.03em) rotate(3deg)}100%{transform:none}}
+
+.badge-wrap{position:absolute;right:20px;top:-8px;width:118px;height:118px;cursor:pointer;border:0;background:none;padding:0;color:var(--ink)}
+.badge-wrap svg.ring{width:100%;height:100%;animation:spin 18s linear infinite}
+.badge-wrap .flower{position:absolute;inset:0;margin:auto;width:72px;height:72px;animation:spin 9s linear infinite reverse;transition:transform .3s}
+.badge-wrap:hover .flower{animation-duration:1.6s}
+.badge-wrap:active .flower{transform:scale(.85)}
+.ring text{font-family:var(--f-mono);font-size:10.4px;letter-spacing:.14em;text-transform:uppercase;fill:var(--muted)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:700px){.badge-wrap{position:relative;right:auto;top:auto;width:92px;height:92px;margin-bottom:20px;display:block}.badge-wrap .flower{width:56px;height:56px}}
+
+.brand .mini{width:16px;height:16px;transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.brand:hover .mini{transform:rotate(144deg) scale(1.15)}
+
+.pill{transition:transform .25s cubic-bezier(.3,1.8,.5,1),border-color .15s,background .15s}
+.pill:hover{transform:translateY(-2px) rotate(-1deg)}
+.pill:active{transform:scale(.96)}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #2E9E6B;opacity:.5;animation:ping 2.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.6);opacity:.6}to{transform:scale(2.2);opacity:0}}
+
+.rv.in{animation:lift .7s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes lift{from{transform:translateY(18px)}to{transform:none}}
+.stat{transition:transform .3s cubic-bezier(.3,1.8,.5,1)}
+.stat:hover{transform:translateY(-3px) rotate(-1.2deg)}
+.featured .tag{animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-2px) rotate(-2deg)}}
+.detail:not([hidden]){animation:drop .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes drop{from{transform:translateY(-6px)}to{transform:none}}
+.row button.head{transition:padding .25s cubic-bezier(.3,1.6,.5,1)}
+.row:hover button.head{padding-left:8px}
+.tabs button{transition:transform .2s cubic-bezier(.3,1.8,.5,1)}
+.tabs button:active{transform:scale(.92)}
+.prog .bar i{transform-origin:left;animation:grow 1.2s cubic-bezier(.2,.9,.3,1) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  .ch,.rv.in,.badge-wrap svg.ring,.badge-wrap .flower,.featured .tag,.pulse::after,.detail:not([hidden]),.prog .bar i{animation:none!important}
+  .pill:hover,.stat:hover{transform:none}
+}
+
+/* content blocks */
+.grade{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:999px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-top:32px}
+.pillar{background:var(--surface);border-radius:14px;padding:20px;transition:transform .3s cubic-bezier(.3,1.8,.5,1)}
+.pillar:hover{transform:translateY(-3px) rotate(-.8deg)}
+.pillar svg{width:30px;height:30px;margin-bottom:10px;transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.pillar:hover svg{transform:rotate(144deg)}
+.pillar h3{font-size:16px;font-weight:600;margin:0 0 6px}
+.pillar p{font-size:14.5px;line-height:1.55;color:var(--muted);margin:0}
+.leads{display:grid;gap:14px}
+.lead{background:var(--surface);border-radius:16px;padding:clamp(20px,4vw,28px)}
+.lead-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.lead .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:999px}
+.lead .where{font-size:13px;color:var(--muted)}
+.lead h3{font-size:clamp(19px,2.8vw,22px);font-weight:600;letter-spacing:-.015em;margin:0 0 6px;text-wrap:balance}
+.lead > p{margin:0;max-width:36em}
+.lead .stack{margin-top:14px}
+.more{all:unset;cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent)}
+.more:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.more.open .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.more .plus{color:var(--accent)}
+.resp{margin:10px 0 0;max-width:36em;color:var(--ink)}
+.resp:not([hidden]){animation:drop .3s cubic-bezier(.2,.9,.3,1.2)}
+.xp ul.pts{margin:4px 0 0;padding-left:1.1em;display:grid;gap:4px;font-size:15px;max-width:36em}
+.xp ul.pts li{display:list-item}
+.xp ul.pts li::marker{color:var(--accent)}
+.skills{display:grid;gap:22px}
+.sk-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sk{font-size:14px;padding:7px 13px;border-radius:999px;background:var(--surface);animation:pop .45s cubic-bezier(.3,1.8,.5,1) both;animation-delay:calc(var(--d) * 30ms);transition:transform .2s cubic-bezier(.3,1.8,.5,1)}
+.sk b{font-weight:500}
+.sk:hover{transform:translateY(-2px) rotate(-2deg);background:var(--accent-soft)}
+@keyframes pop{from{transform:scale(.8)}to{transform:none}}
+@media (prefers-reduced-motion: reduce){.sk,.resp:not([hidden]){animation:none!important}.pillar:hover,.sk:hover{transform:none}}
+</style>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="mini" viewBox="-12 -12 24 24" aria-hidden="true"><use href="#violet"/></svg>Violeta Serrano</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="violet">
+        <ellipse cx="0" cy="-5.6" rx="3.6" ry="5.4" fill="var(--accent)"/>
+        <ellipse cx="0" cy="-5.6" rx="3.6" ry="5.4" fill="var(--accent)" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-5.6" rx="3.6" ry="5.4" fill="var(--petal2)" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-5.6" rx="3.6" ry="5.4" fill="var(--petal2)" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-5.6" rx="3.6" ry="5.4" fill="var(--accent)" transform="rotate(288)"/>
+        <circle r="2.4" fill="var(--sun)"/>
+      </g>
+    </defs>
+  </svg>
+  <header class="hero">
+    <canvas id="petals" aria-hidden="true"></canvas>
+    <div class="wrap">
+    <button class="badge-wrap" id="badge" type="button" aria-label="Click for flowers">
+      <svg class="flower" viewBox="-12 -12 24 24" aria-hidden="true"><use href="#violet"/></svg>
+    </button>
+    <h1 id="name">Hi, I'm <em>Violeta</em></h1>
+    <p>A Mathematics with Management and Finance student at King's College London who loves turning data into <span class="hl">ideas</span>, building the <span class="hl">software</span> to test them, and bringing more women into tech.</p>
+    <div class="links">
+      <a class="pill solid" href="#work">View my work</a>
+      <a class="pill" href="https://www.linkedin.com/in/violeta-serrano-gimeno-99b03a38a" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="pill" href="https://github.com/vioser27" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="pill cv" href="Violeta_Serrano_Gimeno_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+      <a class="pill" href="#contact">Email</a>
+    </div>
+    <div class="status-line"><span class="pulse"></span>Software Engineer at King's Labs · Junior Equity Analyst at KCL Capital Markets</div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="sh"><h2>About me</h2></div>
+      <p>I grew up in Spain and now study in London. I've always liked starting things, from running for class president at school to organising London's first women's hackathon at King's.</p>
+      <p>Maths gives me the tools, finance gives me the questions. I build software to test my ideas, and keep teaching myself beyond the syllabus.</p>
+      <div class="pillars">
+        <div class="pillar"><svg viewBox="-12 -12 24 24" aria-hidden="true"><use href="#violet"/></svg><h3>Investment research</h3><p>Equity research, valuation frameworks and stock pitches at KCL Capital Markets and Strand Global.</p></div>
+        <div class="pillar"><svg viewBox="-12 -12 24 24" aria-hidden="true"><use href="#violet"/></svg><h3>Software &amp; AI</h3><p>Spotting money laundering on the blockchain, finding unusual activity in markets, and AI tools I actually use.</p></div>
+        <div class="pillar"><svg viewBox="-12 -12 24 24" aria-hidden="true"><use href="#violet"/></svg><h3>Community building</h3><p>Hackathons, sponsorships and spaces where more women get to build with technology.</p></div>
+      </div>
+      <h3 class="subh" style="margin-top:40px">Honours</h3>
+      <ul class="simple">
+        <li>King's Enterprise Award <span>· 2026</span></li>
+        <li>Finalist, Ayn Rand Institute's Atlas Shrugged International Essay Contest <span>· 2025</span></li>
+        <li>Extraordinary Secondary Education Award, awarded only to the top students in Spain <span>· 2024</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="wrap">
+      <div class="sh"><h2>Leadership roles</h2></div>
+      <div class="leads" id="leads"></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sh"><h2>Experience</h2></div>
+      <ul class="xp" id="xp"></ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="sh"><h2>Education</h2></div>
+      <ul class="xp">
+        <li><span class="when">Sept 2025 – now</span><div><h3>BSc Mathematics with Management and Finance</h3><p class="org">King's College London · London, UK</p><p class="d"><span class="grade">First Class</span></p></div></li>
+        <li><span class="when">Sept 2019 – Jun 2025</span><div><h3>Secondary Education &amp; Spanish Baccalaureate</h3><p class="org">IES Andalán · Spain</p><p class="d">Baccalaureate with Honours. Extraordinary Secondary Education Award, given only to the top students in the country. Class President, re-elected for two years.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sh"><h2>Featured projects</h2></div>
+
+      <article class="featured" aria-labelledby="f-title">
+        <span class="tag">Hackathon · Oct 2026</span>
+        <h3 id="f-title">Anti-money-laundering detection on the XRP Ledger</h3>
+        <p class="sub">Decode &amp; Detect: XRPL AI Hackathon, UK Centre for Blockchain Technologies × Ripple, London. Team of 4.</p>
+        <div class="stats">
+          <div class="stat"><b data-to="65.1" data-dp="1">65.1</b><span>AP, my model alone</span></div>
+          <div class="stat"><b data-to="67.8" data-dp="1">67.8</b><span>AP, team final entry</span></div>
+          <div class="stat"><b data-to="40" data-dp="0" data-suf="k">40k</b><span>transactions, 8 typologies</span></div>
+        </div>
+        <ul>
+          <li>Built a two-stage gradient-boosting detector that ranks suspicious payments on a synthetic XRP Ledger dataset. It was a core component of the team's final entry.</li>
+          <li>Engineered behavioural and graph features (burst timing, pass-through, payment-cluster structure) and showed that XRPL currency-conversion signals carried no information, removing a train-to-test risk.</li>
+          <li>Ran grouped cross-validation, ablation tests and reproducibility checks.</li>
+        </ul>
+        <div class="stack"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">AI-assisted dev</span></div>
+      </article>
+
+      <div class="sh"><h2>All projects</h2><div class="tabs" id="tabs" role="group" aria-label="Filter projects"></div></div>
+      <ul class="rows" id="rows"></ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sh"><h2>My skills</h2><div class="tabs" id="stabs" role="group" aria-label="Filter skills"></div></div>
+      <div class="skills" id="skills-list"></div>
+    </div>
+  </section>
+
+
+
+  <section id="contact">
+    <div class="wrap contact">
+      <h3>Get in touch</h3>
+      <p>I’m open to internships and other opportunities where I can keep learning, whatever the field. Have a role, a project or a hackathon in mind, or just want to talk markets? I’d love to hear from you.</p>
+      <div class="crow">
+        <span class="email" id="email">violeta.serrano.gimeno@gmail.com</span>
+        <button class="pill" id="copy" type="button">Copy</button>
+        <span class="toast" id="toast" role="status"></span>
+      </div>
+      <div class="crow"><a class="pill solid cv" href="Violeta_Serrano_Gimeno_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a><a class="pill" href="https://www.linkedin.com/in/violeta-serrano-gimeno-99b03a38a" target="_blank" rel="noopener">LinkedIn ↗</a><a class="pill" href="https://github.com/vioser27" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Violeta Serrano Gimeno · London &amp; Spain · <a href="https://github.com/vioser27" target="_blank" rel="noopener">github.com/vioser27</a></div></footer>
+
+<script>
+/* ===== Edit your content here =====
+   status: "shipped" | "building" | "planned"
+   area: any label; the filter tabs are built from these. */
+const PROJECTS = [
+  {title:"XRPL Anti-Money-Laundering Detector", year:"2026", status:"shipped", area:"Quant & ML",
+   one:"Built an AML detector for XRP Ledger payments at a 1-day hackathon (team of 4); my model scored 65.1 AP alone and fed the team's 67.8 final entry.",
+   detail:"Two-stage gradient boosting over behavioural and graph features. Grouped cross-validation and ablations showed which signals generalised and which didn't.",
+   tags:["LightGBM","scikit-learn","Graph features"]},
+  {title:"Market Analysis Algorithm", year:"2026", status:"shipped", area:"Quant & ML",
+   one:"Detects volume anomalies and asymmetric information flows in markets.",
+   detail:"First applied to Polymarket prediction markets, then adapted for equity analysis of blue-chip stocks.",
+   tags:["Python","Time series"]},
+  {title:"Claudia, AI Application Assistant", year:"2026", status:"shipped", area:"AI",
+   one:"A personal assistant that helps with the internship application process.",
+   detail:"Optimises candidate profiles, tailors application materials and tracks progress across applications.",
+   tags:["LLMs","JavaScript"], link:"https://github.com/vioser27/Claudia"},
+  {title:"Freelancer Protection Escrow", year:"2026", status:"shipped", area:"Blockchain",
+   one:"Smart-contract escrow that protects freelancers from non-payment.",
+   detail:"Built at a hackathon. Client funds are locked as collateral and released only once both parties confirm the agreement.",
+   tags:["Smart contracts","Hackathon"]},
+  {title:"AI Skincare Web App", year:"2025", status:"shipped", area:"AI",
+   one:"Analyses skin across multiple parameters and recommends products.",
+   detail:"Built and marketed a web app whose algorithm produces a personalised skincare score with tailored recommendations.",
+   tags:["Web app","Product"]},
+];
+
+const EXPERIENCE = [
+  {when:"Oct 2026 – now", role:"Junior Equity Analyst", org:"KCL Capital Markets · London",
+   pts:["Conduct equity research and financial analysis on companies across sectors to evaluate investment opportunities.",
+        "Prepare and present stock pitches, investment theses and valuation frameworks."]},
+  {when:"Oct 2026 – now", role:"Investment Academy cohort", org:"Strand Global · King's College London",
+   pts:["Learn how a fund works from the inside: researching companies and macro themes, building a view, sizing a position and presenting it.",
+        "Weekly sessions led by members of the fund, with practical work in small groups."]},
+  {when:"Current", role:"Software Engineer", org:"King's Labs · King's Business Club",
+   pts:["King's Business Club is the largest business and finance society in the UK. Founded in 2008, it partners with major banks and consultancies and runs over 80 events a year.",
+        "At King's Labs, its pro-bono software engineering team, we work as software engineers for startup clients in a professional setting, building industry-level software."]},
+  {when:"May – Aug 2026", role:"LLM Trainer & Evaluator", org:"Leading conversational AI platform",
+   pts:["Applied structured evaluation frameworks to benchmark AI outputs for accuracy, coherence and factual reliability in an RLHF pipeline.",
+        "Assessed model outputs against quality and alignment guidelines with close attention to detail.",
+        "Worked in a distributed, cross-functional team on a high-visibility AI system."]}
+];
+
+const LEADERSHIP = [
+  {title:"Organiser, First Women's Hackathon", when:"Oct 2026", where:"London",
+   blurb:"London's first hackathon dedicated to women in STEM, bringing together participants from King's College London, UCL and Imperial College London.",
+   tags:["Event leadership","Partnerships","Mentoring"],
+   resp:"I coordinated logistics, resources, mentors and sponsors to deliver a full-scale hackathon, and created a supportive space for women to build technical skills and collaborate on real-world tech projects."},
+  {title:"Sponsorship Officer", when:"2026 – now", where:"KCL Women in STEM Society",
+   blurb:"Securing the corporate sponsorships and partnerships that fund the society's events for women in STEM.",
+   tags:["Corporate outreach","Proposals","Relationships"],
+   resp:"I manage outreach and proposals to sponsor companies, build and maintain those relationships, and work with the wider committee to align sponsorship strategy with our event and outreach goals."},
+  {title:"Class President", when:"Baccalaureate", where:"IES Andalán, Spain",
+   blurb:"Elected by my classmates and re-elected for two consecutive years.",
+   tags:["Representation","Communication"],
+   resp:"I represented my classmates' interests and liaised with faculty on student affairs."}
+];
+
+const SKILLS = {
+  "Programming": ["Python","SQL","Java","JavaScript","HTML / CSS"],
+  "Data & ML": ["Data analysis","Machine learning (ML)","AI model evaluation","AI-assisted development","Prompt engineering"],
+  "Blockchain": ["Smart contracts","XRP Ledger","Prediction markets"],
+  "Finance": ["Equity research","Financial analysis","Valuation frameworks","Stock pitching","Investment theses"],
+  "Strengths": ["Leadership","Teamwork","Problem solving","Working under pressure","Time management","Creativity"],
+  "Creative": ["Video editing","3D modelling"],
+  "Spoken": [["Spanish","Native"],["English","C2"],["French","Intermediate"],["Mandarin","HSK 1"]]
+};
+
+/* progress: 0–100 */
+
+/* ===== Rendering ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const badge = {shipped:"", building:"Building", planned:"Planned"};
+
+const areas = ["All", ...new Set(PROJECTS.map(p => p.area))];
+let current = "All";
+try { const s = localStorage.getItem("vsg-filter"); if (areas.includes(s)) current = s; } catch(e){}
+
+function renderProjects(){
+  $("#tabs").innerHTML = areas.map(a => `<button type="button" data-a="${esc(a)}" aria-pressed="${a===current}">${esc(a)}</button>`).join("");
+  const list = PROJECTS.filter(p => current === "All" || p.area === current);
+  $("#rows").innerHTML = list.length ? list.map((p,i) => `<li class="row ${p.status}">
+    <button class="head" type="button" aria-expanded="false" aria-controls="d${i}">
+      <span class="title">${esc(p.title)}</span>
+      <span class="right"><span class="badge ${p.status==='building'?'live':''}">${esc(badge[p.status] || p.year)}</span><span class="plus" aria-hidden="true"></span></span>
+      <span class="one">${esc(p.one)}</span>
+    </button>
+    <div class="detail" id="d${i}" hidden>
+      <p>${esc(p.detail)}</p>
+      <div class="stack">${(p.tags||[]).map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>
+      ${p.link ? `<p style="margin-top:12px"><a href="${esc(p.link)}" target="_blank" rel="noopener">View project ↗</a></p>` : ""}
+    </div>
+  </li>`).join("") : '<li class="empty">Nothing here yet.</li>';
+}
+$("#tabs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  current = b.dataset.a; try { localStorage.setItem("vsg-filter", current); } catch(e){}
+  renderProjects();
+});
+$("#rows").addEventListener("click", e => {
+  const h = e.target.closest("button.head"); if (!h) return;
+  const row = h.parentElement, d = row.querySelector(".detail"), open = d.hidden;
+  d.hidden = !open; row.classList.toggle("open", open); h.setAttribute("aria-expanded", open);
+});
+renderProjects();
+
+$("#xp").innerHTML = EXPERIENCE.map(x => `<li><span class="when">${esc(x.when)}</span>
+  <div><h3>${esc(x.role)}</h3><p class="org">${esc(x.org)}</p><ul class="pts">${x.pts.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div></li>`).join("");
+
+$("#leads").innerHTML = LEADERSHIP.map((l,i) => `<article class="lead">
+  <div class="lead-top"><span class="tag">${esc(l.when)}</span><span class="where">${esc(l.where)}</span></div>
+  <h3>${esc(l.title)}</h3><p>${esc(l.blurb)}</p>
+  <div class="stack">${l.tags.map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="lr${i}">My responsibilities <span class="plus" aria-hidden="true"></span></button>
+  <p class="resp" id="lr${i}" hidden>${esc(l.resp)}</p>
+</article>`).join("");
+$("#leads").addEventListener("click", e => {
+  const b = e.target.closest("button.more"); if (!b) return;
+  const r = b.nextElementSibling, open = r.hidden; r.hidden = !open; b.setAttribute("aria-expanded", open); b.classList.toggle("open", open);
+});
+
+const skillCats = ["All", ...Object.keys(SKILLS)];
+let skillCur = "All";
+function renderSkills(){
+  $("#stabs").innerHTML = skillCats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="${c===skillCur}">${esc(c)}</button>`).join("");
+  const cats = skillCur === "All" ? Object.keys(SKILLS) : [skillCur];
+  $("#skills-list").innerHTML = cats.map(c => `<div class="sk-group"><h3 class="subh">${esc(c)}</h3><div class="sk-chips">${
+    SKILLS[c].map((x,i) => Array.isArray(x)
+      ? `<span class="sk" style="--d:${i}"><b>${esc(x[0])}</b> ${esc(x[1])}</span>`
+      : `<span class="sk" style="--d:${i}">${esc(x)}</span>`).join("")}</div></div>`).join("");
+}
+$("#stabs").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; skillCur = b.dataset.c; renderSkills(); });
+renderSkills();
+
+
+$("#copy").addEventListener("click", () => {
+  const done = m => { $("#toast").textContent = m; setTimeout(() => $("#toast").textContent = "", 2200); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done("Selected. Press Ctrl/⌘+C"); };
+  try { navigator.clipboard.writeText($("#email").textContent).then(() => done("Copied ✿"), fallback); } catch(e){ fallback(); }
+});
+
+/* CV download: save prompt where available; otherwise the link opens the PDF */
+(async () => {
+  let dl = null;
+  try { dl = await window.claude?.use?.("downloads"); } catch(e){}
+  if (!dl) return;
+  document.querySelectorAll("a.cv").forEach(a => a.addEventListener("click", async ev => {
+    if (a.dataset.fallback) return;
+    ev.preventDefault();
+    try {
+      const blob = await fetch(a.getAttribute("href")).then(r => { if (!r.ok) throw {code:"fetch"}; return r.blob(); });
+      await dl.save({filename:"Violeta_Serrano_Gimeno_CV.pdf", data: blob});
+    } catch(e) {
+      if (e && e.code === "declined") return;
+      a.dataset.fallback = "1"; a.textContent = "Open CV ↗";
+    }
+  }));
+})();
+
+/* ===== motion ===== */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* bouncy letters in the name */
+(() => {
+  const h = $("#name"); let i = 0;
+  const split = node => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.append(document.createTextNode(" ")); return; }
+          const w = document.createElement("span"); w.className = "word";
+          [...part].forEach(c => { const s = document.createElement("span"); s.className = "ch"; s.style.setProperty("--i", i++); s.textContent = c; w.append(s); });
+          frag.append(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) split(n);
+    });
+  };
+  h.setAttribute("aria-label", h.textContent); split(h);
+  h.querySelectorAll(".word").forEach(w => w.setAttribute("aria-hidden","true"));
+})();
+
+/* gentle lift as sections scroll in (content is visible regardless) */
+(() => {
+  if (reduce || !("IntersectionObserver" in window)) return;
+  const els = document.querySelectorAll("section .sh, .featured, .row, .xp > li, .learn li, .pillar, .lead, .contact h3");
+  els.forEach(e => e.classList.add("rv"));
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), {rootMargin:"0px 0px -8% 0px"});
+  els.forEach(e => io.observe(e));
+  /* count up the hackathon numbers */
+  const stats = document.querySelectorAll(".stat b[data-to]");
+  const so = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting) return; so.unobserve(en.target);
+    const b = en.target, to = +b.dataset.to, dp = +b.dataset.dp, suf = b.dataset.suf || "", t0 = performance.now();
+    const tick = now => { const p = Math.min(1, (now - t0) / 1100), e = 1 - Math.pow(1 - p, 3);
+      b.textContent = (to * e).toFixed(dp) + suf; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), {threshold:.6});
+  stats.forEach(s => so.observe(s));
+})();
+
+/* falling violets in the hero; they drift away from the cursor, click the badge for a burst */
+(() => {
+  const c = $("#petals"), ctx = c.getContext("2d"), hero = c.parentElement;
+  let W = 0, H = 0, flowers = [], col = {}, mouse = {x:-999, y:-999}, raf, visible = true;
+  const readCol = () => { const cs = getComputedStyle(document.documentElement);
+    col = {a:cs.getPropertyValue("--accent").trim(), b:cs.getPropertyValue("--petal2").trim(), s:cs.getPropertyValue("--sun").trim()}; };
+  const size = () => { const r = hero.getBoundingClientRect(), d = devicePixelRatio || 1; W = r.width; H = r.height; c.width = W*d; c.height = H*d; ctx.setTransform(d,0,0,d,0,0); };
+  const make = (x, y, burst) => ({ x: x ?? Math.random()*W, y: y ?? -20 - Math.random()*H, r: 4 + Math.random()*6,
+    vx: burst ? (Math.random()-.5)*6 : (Math.random()-.5)*.3, vy: burst ? -2 - Math.random()*4 : .35 + Math.random()*.5,
+    rot: Math.random()*6.28, vr: (Math.random()-.5)*.03, sway: Math.random()*6.28, a: .35 + Math.random()*.45, life: burst ? 1 : null });
+  const drawFlower = f => {
+    ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.rot); ctx.globalAlpha = f.a * (f.life ?? 1);
+    for (let k = 0; k < 5; k++) { ctx.fillStyle = k < 2 || k === 4 ? col.a : col.b; ctx.beginPath();
+      ctx.ellipse(0, -f.r*.55, f.r*.36, f.r*.54, 0, 0, 6.283); ctx.fill(); ctx.rotate(1.2566); }
+    ctx.fillStyle = col.s; ctx.beginPath(); ctx.arc(0, 0, f.r*.24, 0, 6.283); ctx.fill(); ctx.restore();
+  };
+  const step = () => {
+    ctx.clearRect(0,0,W,H);
+    flowers.forEach(f => {
+      f.sway += .02; f.x += f.vx + Math.sin(f.sway)*.25; f.y += f.vy; f.rot += f.vr;
+      if (f.life != null) { f.vy += .08; f.vx *= .985; f.life -= .008; }
+      const dx = f.x - mouse.x, dy = f.y - mouse.y, d2 = dx*dx + dy*dy;
+      if (d2 < 8000) { const d = Math.sqrt(d2) || 1, push = (1 - d/90) * 1.6; f.x += dx/d*push; f.y += dy/d*push; f.vr += (Math.random()-.5)*.01; }
+      if (f.life == null && f.y > H + 20) Object.assign(f, make(), {y:-20});
+      drawFlower(f);
+    });
+    flowers = flowers.filter(f => f.life == null || f.life > 0);
+    if (visible) raf = requestAnimationFrame(step);
+  };
+  readCol(); size();
+  const count = Math.round(Math.min(26, Math.max(10, W/45)));
+  for (let k = 0; k < count; k++) flowers.push(make(null, Math.random()*H));
+  if (reduce) { flowers.forEach(drawFlower); }
+  else {
+    step();
+    new IntersectionObserver(es => { const v = es[0].isIntersecting; if (v && !visible) { visible = true; step(); } else if (!v) { visible = false; cancelAnimationFrame(raf); } }).observe(hero);
+  }
+  hero.addEventListener("pointermove", e => { const r = hero.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  hero.addEventListener("pointerleave", () => { mouse.x = mouse.y = -999; });
+  $("#badge").addEventListener("click", () => {
+    if (reduce) return;
+    const r = $("#badge").getBoundingClientRect(), h = hero.getBoundingClientRect();
+    for (let k = 0; k < 22; k++) flowers.push(make(r.left - h.left + r.width/2, r.top - h.top + r.height/2, true));
+  });
+  addEventListener("resize", () => { size(); if (reduce) { ctx.clearRect(0,0,W,H); flowers.forEach(drawFlower); } });
+  const recolor = () => { readCol(); if (reduce) { ctx.clearRect(0,0,W,H); flowers.forEach(drawFlower); } };
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", recolor);
+  new MutationObserver(recolor).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+})();
+</script>
+
+</body>
+</html>
