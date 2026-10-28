@@ -153,7 +153,8 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
 /* ===== motion ===== */
 .hero{position:relative;overflow:hidden;padding-inline:0}
 .hero .wrap{position:relative;z-index:1}
-#petals{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+#petals{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0;pointer-events:none}
+main > section, footer{position:relative;z-index:1}
 .ch{display:inline-block;transform-origin:50% 80%;animation:rise .7s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--i) * 35ms)}
 .word{white-space:nowrap;display:inline-block}
 .ch:hover{animation:boing .5s cubic-bezier(.3,1.8,.5,1)}
@@ -233,6 +234,18 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
 .sk:hover{transform:translateY(-2px) rotate(-2deg);background:var(--accent-soft)}
 @keyframes pop{from{transform:scale(.8)}to{transform:none}}
 @media (prefers-reduced-motion: reduce){.sk,.resp:not([hidden]){animation:none!important}.pillar:hover,.sk:hover{transform:none}}
+
+.pt{margin:0 0 12px}
+.pt-h{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.pt p{margin:0}
+.hobbies{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px}
+.hob{background:var(--surface);border-radius:14px;padding:18px;color:var(--ink);transition:transform .3s cubic-bezier(.3,1.8,.5,1)}
+.hob svg{width:34px;height:34px;color:var(--accent);margin-bottom:8px;transition:transform .5s cubic-bezier(.3,1.8,.5,1)}
+.hob:hover{transform:translateY(-3px) rotate(-1deg)}
+.hob:hover svg{transform:rotate(-12deg) scale(1.12)}
+.hob h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.hob p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+@media (prefers-reduced-motion: reduce){.hob:hover,.hob:hover svg{transform:none}}
 </style>
 
 <nav aria-label="Sections">
@@ -244,6 +257,7 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
       <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -274,7 +288,7 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
       <a class="pill solid" href="#work">View my work</a>
       <a class="pill" href="https://www.linkedin.com/in/violeta-serrano-gimeno-99b03a38a" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="pill" href="https://github.com/vioser27" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="pill cv" href="Violeta_Serrano_Gimeno_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+      <a class="pill cv" href="Violeta_Serrano_Gimeno_CV.pdf" download="Violeta_Serrano_Gimeno_CV.pdf">Download CV ↓</a>
       <a class="pill" href="#contact">Email</a>
     </div>
     <div class="status-line"><span class="pulse"></span>Software Engineer at King's Labs · Junior Equity Analyst at KCL Capital Markets</div>
@@ -318,7 +332,7 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
     <div class="wrap">
       <div class="sh"><h2>Education</h2></div>
       <ul class="xp">
-        <li><span class="when">Sept 2025 – now</span><div><h3>BSc Mathematics with Management and Finance</h3><p class="org">King's College London · London, UK</p><p class="d"><span class="grade">First Class</span></p></div></li>
+        <li><span class="when">Sept 2025 – now</span><div><h3>BSc Mathematics with Management and Finance</h3><p class="org">King's College London · London, UK</p><p class="d"><span class="grade">First Class expected</span></p></div></li>
         <li><span class="when">Sept 2019 – Jun 2025</span><div><h3>Secondary Education &amp; Spanish Baccalaureate</h3><p class="org">IES Andalán · Spain</p><p class="d">Baccalaureate with Honours. Extraordinary Secondary Education Award, given only to the top students in the country. Class President, re-elected for two years.</p></div></li>
       </ul>
     </div>
@@ -343,7 +357,7 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
           <li>Engineered behavioural and graph features (burst timing, pass-through, payment-cluster structure) and showed that XRPL currency-conversion signals carried no information, removing a train-to-test risk.</li>
           <li>Ran grouped cross-validation, ablation tests and reproducibility checks.</li>
         </ul>
-        <div class="stack"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">AI-assisted dev</span></div>
+        <div class="stack"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">LightGBM</span><span class="chip">AI-assisted dev</span></div>
       </article>
 
       <div class="sh"><h2>All projects</h2><div class="tabs" id="tabs" role="group" aria-label="Filter projects"></div></div>
@@ -360,6 +374,18 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
 
 
 
+  <section id="hobbies">
+    <div class="wrap">
+      <div class="sh"><h2>Off the clock</h2></div>
+      <div class="hobbies">
+        <div class="hob"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M15 12v24M24 12v24M33 12v24" stroke="currentColor" stroke-width="2"/><rect x="12" y="12" width="5" height="13" rx="1" fill="currentColor"/><rect x="21" y="12" width="5" height="13" rx="1" fill="currentColor"/><rect x="30" y="12" width="5" height="13" rx="1" fill="currentColor"/></svg><h3>Piano</h3><p>Playing is how I switch off after a long day.</p></div>
+        <div class="hob"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 30c-3-6-2-16 6-18 4-1 8 0 11 2 5 3 6 9 5 13l-2 7H17z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M16 34h19v6H16z" fill="currentColor"/><path d="M22 20c2-2 6-2 8 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><h3>Karate &amp; Muay Thai</h3><p>Martial arts keep me disciplined and calm under pressure.</p></div>
+        <div class="hob"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 38 18 14l8 12 5-7 13 19z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 21l4-7 4 6-4 2z" fill="currentColor"/></svg><h3>Skiing</h3><p>Happiest on a mountain in winter.</p></div>
+        <div class="hob"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h24a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H18l-7 6v-6H8a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M40 20h0a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-2v5l-6-5h-8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg><h3>Debate</h3><p>I love building an argument and defending it.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap contact">
       <h3>Get in touch</h3>
@@ -369,7 +395,7 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
         <button class="pill" id="copy" type="button">Copy</button>
         <span class="toast" id="toast" role="status"></span>
       </div>
-      <div class="crow"><a class="pill solid cv" href="Violeta_Serrano_Gimeno_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a><a class="pill" href="https://www.linkedin.com/in/violeta-serrano-gimeno-99b03a38a" target="_blank" rel="noopener">LinkedIn ↗</a><a class="pill" href="https://github.com/vioser27" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <div class="crow"><a class="pill solid cv" href="Violeta_Serrano_Gimeno_CV.pdf" download="Violeta_Serrano_Gimeno_CV.pdf">Download CV ↓</a><a class="pill" href="https://www.linkedin.com/in/violeta-serrano-gimeno-99b03a38a" target="_blank" rel="noopener">LinkedIn ↗</a><a class="pill" href="https://github.com/vioser27" target="_blank" rel="noopener">GitHub ↗</a></div>
     </div>
   </section>
 </main>
@@ -381,26 +407,48 @@ footer{padding-block:40px;color:var(--muted);font-size:13px}
    status: "shipped" | "building" | "planned"
    area: any label; the filter tabs are built from these. */
 const PROJECTS = [
-  {title:"XRPL Anti-Money-Laundering Detector", year:"2026", status:"shipped", area:"Quant & ML",
-   one:"Built an AML detector for XRP Ledger payments at a 1-day hackathon (team of 4); my model scored 65.1 AP alone and fed the team's 67.8 final entry.",
-   detail:"Two-stage gradient boosting over behavioural and graph features. Grouped cross-validation and ablations showed which signals generalised and which didn't.",
-   tags:["LightGBM","scikit-learn","Graph features"]},
-  {title:"Market Analysis Algorithm", year:"2026", status:"shipped", area:"Quant & ML",
-   one:"Detects volume anomalies and asymmetric information flows in markets.",
-   detail:"First applied to Polymarket prediction markets, then adapted for equity analysis of blue-chip stocks.",
-   tags:["Python","Time series"]},
+  {title:"XRPL Anti-Money-Laundering Detector", year:"Oct 2026", status:"shipped", area:"Data & ML",
+   one:"An AML detector for XRP Ledger payments, built in one day with a team of 4. My model scored 65.1 AP on its own and fed the team's 67.8 entry.",
+   points:[["The challenge","At the Decode & Detect XRPL AI Hackathon (UK Centre for Blockchain Technologies × Ripple), teams had to find money laundering hidden in 40,000 synthetic XRP Ledger transactions, covering 8 different laundering patterns."],
+           ["What I built","A two-stage gradient-boosting model that ranks payments from most to least suspicious. I designed features that describe behaviour: bursts of activity, money that passes straight through an account, and the shape of payment clusters."],
+           ["What I found","Currency-conversion signals on XRPL carried no real information, so I removed them, which protected the model from doing well in training and badly on the test set."],
+           ["Result","65.1 average precision on my own, and a core part of the team's final 67.8 entry. I checked it with grouped cross-validation, ablation tests and reproducibility runs."]],
+   tags:["Python","pandas","LightGBM"]},
   {title:"Claudia, AI Application Assistant", year:"2026", status:"shipped", area:"AI",
-   one:"A personal assistant that helps with the internship application process.",
-   detail:"Optimises candidate profiles, tailors application materials and tracks progress across applications.",
-   tags:["LLMs","JavaScript"], link:"https://github.com/vioser27/Claudia"},
+   one:"A personal AI assistant that guides you through internship applications, from your profile to the interview.",
+   points:[["The problem","Applying for internships means rewriting the same profile again and again, losing track of where each application stands, and not knowing which skills you're missing."],
+           ["What I built","An assistant that optimises your candidate profile, tailors materials to each role, tracks every application in a personalised dashboard, spots the skills you're missing for a role, and helps you prepare for interviews."]],
+   tags:["JavaScript","LLMs"], link:"https://github.com/vioser27/Claudia"},
+  {title:"Blue-Chip Valuation Screener", year:"2026", status:"shipped", area:"Finance",
+   one:"Tells you whether a large, established company looks cheap or expensive compared with its own history.",
+   points:[["How it works","It checks two things: whether the share price is unusually low or high against its long-run average (timing), and whether valuation multiples such as P/E, EV/EBITDA, P/B and P/FCF are low or high against the company's own history (real cheapness). It only gives a strong green signal when both agree."],
+           ["Extra signals","Unusual trading-volume spikes, insider buying and selling from SEC Form 4 filings (flagging clusters of insider buys and coordinated CEO and CFO sales), and financial-health scores (Piotroski F-Score and Altman Z) to avoid value traps."],
+           ["Built for","Mature, profitable companies such as Johnson & Johnson or Nike, where comparing against history makes sense. It also checks every price series for stale data, gaps and suspicious jumps."]],
+   tags:["Python","pandas","SEC EDGAR","Financial APIs"]},
+  {title:"Polymarket Whale Tracker", year:"2026", status:"shipped", area:"Finance",
+   one:"Follows the biggest traders on Polymarket and alerts you when someone might know something first.",
+   points:[["The idea","On prediction markets, sudden volume and large one-sided bets from 'whales' can mean information is reaching some traders before others."],
+           ["What I built","A tracker that follows whale activity on Polymarket prediction markets, flags volume anomalies and asymmetric information flows, and sends alerts when something unusual happens."]],
+   tags:["Python","Prediction markets"]},
   {title:"Freelancer Protection Escrow", year:"2026", status:"shipped", area:"Blockchain",
-   one:"Smart-contract escrow that protects freelancers from non-payment.",
-   detail:"Built at a hackathon. Client funds are locked as collateral and released only once both parties confirm the agreement.",
+   one:"A smart contract that makes sure freelancers get paid.",
+   points:[["The problem","Freelancers often do the work and never get paid, and clients worry about paying for work that never arrives."],
+           ["What I built","At a hackathon, a smart-contract escrow: the client's funds are locked as collateral and only released once both sides confirm the agreement, protecting everyone from scams and non-payment."]],
    tags:["Smart contracts","Hackathon"]},
   {title:"AI Skincare Web App", year:"2025", status:"shipped", area:"AI",
-   one:"Analyses skin across multiple parameters and recommends products.",
-   detail:"Built and marketed a web app whose algorithm produces a personalised skincare score with tailored recommendations.",
-   tags:["Web app","Product"]},
+   one:"Analyses your skin, tracks your progress and warns you about worrying ingredients.",
+   points:[["What it does","A proprietary algorithm analyses skin across multiple parameters and gives a personalised skincare score with tailored product recommendations. It tracks your skin over time and flags concerning ingredients in the products you use."],
+           ["Making it fun","The app has its own mascot and a reward system to keep people coming back to their routine."],
+           ["My role","I founded the app, built it and took it to market, from the product itself to marketing it to users."]],
+   tags:["Founder","Web app","Product","Marketing"]},
+  {title:"Fitness & Health Mobile App", year:"", status:"shipped", area:"Apps",
+   one:"A mobile app for tracking health and fitness.",
+   points:[["What I did","Designed and developed the app end to end: the UI/UX design, the data architecture and the features."]],
+   tags:["Mobile","UI/UX"]},
+  {title:"International Student Community Channel", year:"", status:"shipped", area:"Media",
+   one:"A channel I founded for students worldwide, now reaching over 500,000 people.",
+   points:[["What I do","I founded and manage the channel, creating content for an international student community."]],
+   tags:["Content","Community"]}
 ];
 
 const EXPERIENCE = [
@@ -408,11 +456,12 @@ const EXPERIENCE = [
    pts:["Conduct equity research and financial analysis on companies across sectors to evaluate investment opportunities.",
         "Prepare and present stock pitches, investment theses and valuation frameworks."]},
   {when:"Oct 2026 – now", role:"Investment Academy cohort", org:"Strand Global · King's College London",
-   pts:["Learn how a fund works from the inside: researching companies and macro themes, building a view, sizing a position and presenting it.",
-        "Weekly sessions led by members of the fund, with practical work in small groups."]},
-  {when:"Current", role:"Software Engineer", org:"King's Labs · King's Business Club",
+   pts:["Learn how a fund works from the inside: researching companies and macro themes, building a view, sizing a position and presenting it."]},
+  {when:"Oct 2026 – now", role:"Software Engineer", org:"King's Labs · King's Business Club",
    pts:["King's Business Club is the largest business and finance society in the UK. Founded in 2008, it partners with major banks and consultancies and runs over 80 events a year.",
-        "At King's Labs, its pro-bono software engineering team, we work as software engineers for startup clients in a professional setting, building industry-level software."]},
+        "Partner directly with real companies and startups to design, build and deploy software solutions tailored to their operational and technical needs.",
+        "Engage in real client work, hands-on coding and software development, collaborating closely with client founders and a structured team of student engineers.",
+        "Also help out at some King's Business Club events."]},
   {when:"May – Aug 2026", role:"LLM Trainer & Evaluator", org:"Leading conversational AI platform",
    pts:["Applied structured evaluation frameworks to benchmark AI outputs for accuracy, coherence and factual reliability in an RLHF pipeline.",
         "Assessed model outputs against quality and alignment guidelines with close attention to detail.",
@@ -421,7 +470,7 @@ const EXPERIENCE = [
 
 const LEADERSHIP = [
   {title:"Organiser, First Women's Hackathon", when:"Oct 2026", where:"London",
-   blurb:"London's first hackathon dedicated to women in STEM, bringing together participants from King's College London, UCL and Imperial College London.",
+   blurb:"London's first hackathon dedicated to women in STEM, bringing together 100+ participants from King's College London, UCL and Imperial College London.",
    tags:["Event leadership","Partnerships","Mentoring"],
    resp:"I coordinated logistics, resources, mentors and sponsors to deliver a full-scale hackathon, and created a supportive space for women to build technical skills and collaborate on real-world tech projects."},
   {title:"Sponsorship Officer", when:"2026 – now", where:"KCL Women in STEM Society",
@@ -439,7 +488,7 @@ const SKILLS = {
   "Data & ML": ["Data analysis","Machine learning (ML)","AI model evaluation","AI-assisted development","Prompt engineering"],
   "Blockchain": ["Smart contracts","XRP Ledger","Prediction markets"],
   "Finance": ["Equity research","Financial analysis","Valuation frameworks","Stock pitching","Investment theses"],
-  "Strengths": ["Leadership","Teamwork","Problem solving","Working under pressure","Time management","Creativity"],
+  "Strengths": ["Leadership","Time management","Creativity","Teamwork","Problem solving","Working under pressure","Digital literacy"],
   "Creative": ["Video editing","3D modelling"],
   "Spoken": [["Spanish","Native"],["English","C2"],["French","Intermediate"],["Mandarin","HSK 1"]]
 };
@@ -461,11 +510,11 @@ function renderProjects(){
   $("#rows").innerHTML = list.length ? list.map((p,i) => `<li class="row ${p.status}">
     <button class="head" type="button" aria-expanded="false" aria-controls="d${i}">
       <span class="title">${esc(p.title)}</span>
-      <span class="right"><span class="badge ${p.status==='building'?'live':''}">${esc(badge[p.status] || p.year)}</span><span class="plus" aria-hidden="true"></span></span>
+      <span class="right"><span class="badge ${p.status==='building'?'live':''}">${esc(badge[p.status] || p.year || "")}</span><span class="plus" aria-hidden="true"></span></span>
       <span class="one">${esc(p.one)}</span>
     </button>
     <div class="detail" id="d${i}" hidden>
-      <p>${esc(p.detail)}</p>
+      ${(p.points||[]).map(([h,t]) => `<div class="pt"><span class="pt-h">${esc(h)}</span><p>${esc(t)}</p></div>`).join("")}
       <div class="stack">${(p.tags||[]).map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>
       ${p.link ? `<p style="margin-top:12px"><a href="${esc(p.link)}" target="_blank" rel="noopener">View project ↗</a></p>` : ""}
     </div>
@@ -564,7 +613,7 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* gentle lift as sections scroll in (content is visible regardless) */
 (() => {
   if (reduce || !("IntersectionObserver" in window)) return;
-  const els = document.querySelectorAll("section .sh, .featured, .row, .xp > li, .learn li, .pillar, .lead, .contact h3");
+  const els = document.querySelectorAll("section .sh, .featured, .row, .xp > li, .pillar, .lead, .hob, .contact h3");
   els.forEach(e => e.classList.add("rv"));
   const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), {rootMargin:"0px 0px -8% 0px"});
   els.forEach(e => io.observe(e));
@@ -582,14 +631,14 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* falling violets in the hero; they drift away from the cursor, click the badge for a burst */
 (() => {
-  const c = $("#petals"), ctx = c.getContext("2d"), hero = c.parentElement;
+  const c = $("#petals"), ctx = c.getContext("2d");
   let W = 0, H = 0, flowers = [], col = {}, mouse = {x:-999, y:-999}, raf, visible = true;
   const readCol = () => { const cs = getComputedStyle(document.documentElement);
     col = {a:cs.getPropertyValue("--accent").trim(), b:cs.getPropertyValue("--petal2").trim(), s:cs.getPropertyValue("--sun").trim()}; };
-  const size = () => { const r = hero.getBoundingClientRect(), d = devicePixelRatio || 1; W = r.width; H = r.height; c.width = W*d; c.height = H*d; ctx.setTransform(d,0,0,d,0,0); };
+  const size = () => { const d = devicePixelRatio || 1; W = innerWidth; H = innerHeight; c.width = W*d; c.height = H*d; ctx.setTransform(d,0,0,d,0,0); };
   const make = (x, y, burst) => ({ x: x ?? Math.random()*W, y: y ?? -20 - Math.random()*H, r: 4 + Math.random()*6,
     vx: burst ? (Math.random()-.5)*6 : (Math.random()-.5)*.3, vy: burst ? -2 - Math.random()*4 : .35 + Math.random()*.5,
-    rot: Math.random()*6.28, vr: (Math.random()-.5)*.03, sway: Math.random()*6.28, a: .35 + Math.random()*.45, life: burst ? 1 : null });
+    rot: Math.random()*6.28, vr: (Math.random()-.5)*.03, sway: Math.random()*6.28, a: .25 + Math.random()*.35, life: burst ? 1 : null });
   const drawFlower = f => {
     ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.rot); ctx.globalAlpha = f.a * (f.life ?? 1);
     for (let k = 0; k < 5; k++) { ctx.fillStyle = k < 2 || k === 4 ? col.a : col.b; ctx.beginPath();
@@ -610,19 +659,19 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (visible) raf = requestAnimationFrame(step);
   };
   readCol(); size();
-  const count = Math.round(Math.min(26, Math.max(10, W/45)));
+  const count = Math.round(Math.min(30, Math.max(12, W/40)));
   for (let k = 0; k < count; k++) flowers.push(make(null, Math.random()*H));
   if (reduce) { flowers.forEach(drawFlower); }
   else {
     step();
-    new IntersectionObserver(es => { const v = es[0].isIntersecting; if (v && !visible) { visible = true; step(); } else if (!v) { visible = false; cancelAnimationFrame(raf); } }).observe(hero);
+    document.addEventListener("visibilitychange", () => { const v = !document.hidden; if (v && !visible) { visible = true; step(); } else if (!v) { visible = false; cancelAnimationFrame(raf); } });
   }
-  hero.addEventListener("pointermove", e => { const r = hero.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
-  hero.addEventListener("pointerleave", () => { mouse.x = mouse.y = -999; });
+  addEventListener("pointermove", e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -999; });
   $("#badge").addEventListener("click", () => {
     if (reduce) return;
-    const r = $("#badge").getBoundingClientRect(), h = hero.getBoundingClientRect();
-    for (let k = 0; k < 22; k++) flowers.push(make(r.left - h.left + r.width/2, r.top - h.top + r.height/2, true));
+    const r = $("#badge").getBoundingClientRect();
+    for (let k = 0; k < 22; k++) flowers.push(make(r.left + r.width/2, r.top + r.height/2, true));
   });
   addEventListener("resize", () => { size(); if (reduce) { ctx.clearRect(0,0,W,H); flowers.forEach(drawFlower); } });
   const recolor = () => { readCol(); if (reduce) { ctx.clearRect(0,0,W,H); flowers.forEach(drawFlower); } };
